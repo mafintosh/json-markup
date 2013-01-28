@@ -62,5 +62,5 @@ module.exports = function(doc) {
 		return '';
 	};
 
-	return '<pre>'+visit(doc)+'</pre>';
+	return '<pre class="htmlify">'+visit(doc)+'</pre>';
 };
