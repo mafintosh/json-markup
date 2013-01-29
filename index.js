@@ -1,7 +1,7 @@
 var INDENT = '    ';
 
 var type = function(doc) {
-	if (doc === 'null') return 'null';
+	if (doc === null) return 'null';
 	if (Array.isArray(doc)) return 'array';
 	if (typeof doc === 'string' && /https?:/.test(doc)) return 'link';
 
