@@ -1,3 +1,5 @@
+var INDENT = '    ';
+
 var type = function(doc) {
 	if (doc === 'null') return 'null';
 	if (Array.isArray(doc)) return 'array';
@@ -18,11 +20,11 @@ module.exports = function(doc) {
 
 		var out = start+'\n';
 
-		indent += '    ';
+		indent += INDENT;
 		list.forEach(function(key, i) {
 			out += indent+fn(key)+(i < list.length-1 ? ',' : '')+'\n';
 		});
-		indent = indent.slice(0, -4);
+		indent = indent.slice(0, -INDENT.length);
 
 		return out + indent+end;
 	};
@@ -62,5 +64,5 @@ module.exports = function(doc) {
 		return '';
 	};
 
-	return '<pre class="htmlify">'+visit(doc)+'</pre>';
+	return '<div class="markupify">'+visit(doc)+'</div>';
 };

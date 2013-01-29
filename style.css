@@ -1,0 +1,21 @@
+.markupify {
+	line-height: 17px;
+	font-size: 13px;
+	font-family: monospace;
+	white-space: pre;
+}
+.markupify .key {
+	font-weight: bold;
+}
+.markupify .bool {
+	color: firebrick;
+}
+.markupify .string {
+	color: green;
+}
+.markupify .null {
+	color: gray;
+}
+.markupify .number {
+	color: blue;
+}

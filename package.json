@@ -1,0 +1,8 @@
+{
+ "name":"markupify",
+ "version":"0.1.0",
+ "repository": "git://github.com/mafintosh/markupify",
+ "description":"a json to html syntax highlighter",
+ "keywords": ["json", "html", "syntax", "highlight"],
+ "author": "Mathias Buus Madsen <mathiasbuus@gmail.com>"
+}
