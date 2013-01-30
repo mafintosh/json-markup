@@ -1,21 +1,21 @@
-.markupify {
+.json-markup {
 	line-height: 17px;
 	font-size: 13px;
 	font-family: monospace;
 	white-space: pre;
 }
-.markupify .key {
+.json-markup .key {
 	font-weight: bold;
 }
-.markupify .bool {
+.json-markup .bool {
 	color: firebrick;
 }
-.markupify .string {
+.json-markup .string {
 	color: green;
 }
-.markupify .null {
+.json-markup .null {
 	color: gray;
 }
-.markupify .number {
+.json-markup .number {
 	color: blue;
 }

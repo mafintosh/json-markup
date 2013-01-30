@@ -64,5 +64,5 @@ module.exports = function(doc) {
 		return '';
 	};
 
-	return '<div class="markupify">'+visit(doc)+'</div>';
+	return '<div class="json-markup">'+visit(doc)+'</div>';
 };
