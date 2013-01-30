@@ -1,6 +1,6 @@
 # json-markup
 
-Highlight your JSON with HTML markup
+Prettyprint JSON to HTML
 
 	npm install json-markup
 
