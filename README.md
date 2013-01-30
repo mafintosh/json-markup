@@ -23,8 +23,8 @@ console.log(html);
 The above example will print the following HTML
 
 ``` html
-<div class="markupify">{
-	<span class="key">hello:</span> <span class="string">"world"</span>
+<div class="json-markup">{
+	<span class="json-markup-key">hello:</span> <span class="json-markup-string">"world"</span>
 }</div>
 ```
 
