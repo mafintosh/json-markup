@@ -4,18 +4,18 @@
 	font-family: monospace;
 	white-space: pre;
 }
-.json-markup .key {
+.json-markup-key {
 	font-weight: bold;
 }
-.json-markup .bool {
+.json-markup-bool {
 	color: firebrick;
 }
-.json-markup .string {
+.json-markup-string {
 	color: green;
 }
-.json-markup .null {
+.json-markup-null {
 	color: gray;
 }
-.json-markup .number {
+.json-markup-number {
 	color: blue;
 }

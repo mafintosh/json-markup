@@ -1,7 +1,7 @@
 {
  "name":"json-markup",
  "repo":"mafintosh/json-markup",
- "version":"0.1.2",
+ "version":"0.1.3",
  "description":"a json to html syntax highlighter",
  "keywords": ["json", "html", "syntax", "highlight"],
  "author": "Mathias Buus Madsen <mathiasbuus@gmail.com>",

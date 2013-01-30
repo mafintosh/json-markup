@@ -34,19 +34,19 @@ module.exports = function(doc) {
 
 		switch (type(obj)) {
 			case 'boolean':
-			return '<span class="bool">'+obj+'</span>';
+			return '<span class="json-markup-bool">'+obj+'</span>';
 
 			case 'number':
-			return '<span class="number">'+obj+'</span>';
+			return '<span class="json-markup-number">'+obj+'</span>';
 
 			case 'null':
-			return '<span class="null">null</span>\n';
+			return '<span class="json-markup-null">null</span>\n';
 
 			case 'string':
-			return '<span class="string">"'+escape(obj)+'"</span>';
+			return '<span class="json-markup-string">"'+escape(obj)+'"</span>';
 
 			case 'link':
-			return '<span class="string">"<a href="'+escape(obj)+'">'+escape(obj)+'</a>"</span>';
+			return '<span class="json-markup-string">"<a href="'+escape(obj)+'">'+escape(obj)+'</a>"</span>';
 
 			case 'array':
 			return forEach(obj, '[', ']', visit);
@@ -57,7 +57,7 @@ module.exports = function(doc) {
 			});
 
 			return forEach(keys, '{', '}', function(key) {
-				return '<span class="key">'+key + ':</span> '+visit(obj[key]);
+				return '<span class="json-markup-key">'+key + ':</span> '+visit(obj[key]);
 			});
 		}
 
