@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>json-markup component example</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" href="build/build.css">
+	<script src="build/build.js"></script>
+</head>
+<body>
+	<script>
+		var jsonMarkup = require('json-markup');
+
+		document.body.innerHTML += jsonMarkup({
+			title: 'example',
+			time: new Date().getTime(),
+			misc: [
+				['i am an arrray'],
+				{i:{am:{an:'object'}}},
+				'string',
+				42,
+				true,
+				null
+			],
+			empty: {}
+		});
+	</script>
+</body>
+</html>
