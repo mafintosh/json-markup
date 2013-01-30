@@ -1,15 +1,15 @@
-# markupify
+# json-markup
 
 Highlight your JSON with HTML markup
 
-	npm install markupify
+	npm install json-markup
 
-Markupify will take a JSON document and add markup to it so it can be styled in a browser.
+json-markup will take a JSON document and add markup to it so it can be styled in a browser.
 
 ``` js
-var markupify = require('markupify');
+var jsonMarkup = require('json-markup');
 
-var html = markupify({hello:'world'});
+var html = jsonMarkup({hello:'world'});
 
 console.log(html);
 ```
