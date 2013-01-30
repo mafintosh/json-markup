@@ -2,7 +2,13 @@
 
 Prettyprint JSON to HTML
 
+It is available through npm
+
 	npm install json-markup
+
+or as a [component](https://github.com/component/component) for the browser
+
+	component install mafintosh/json-markup
 
 json-markup will take a JSON document and add markup to it so it can be styled in a browser.
 
