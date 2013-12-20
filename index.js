@@ -43,7 +43,7 @@ module.exports = function(doc) {
 			return '<span class="json-markup-null">null</span>\n';
 
 			case 'string':
-			return '<span class="json-markup-string">"'+escape(obj)+'"</span>';
+			return '<span class="json-markup-string">"'+escape(obj.replace(/\n/g, '\n'+indent))+'"</span>';
 
 			case 'link':
 			return '<span class="json-markup-string">"<a href="'+escape(obj)+'">'+escape(obj)+'</a>"</span>';
