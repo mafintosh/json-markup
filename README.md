@@ -12,6 +12,8 @@ or as a [component](https://github.com/component/component) for the browser
 
 json-markup will take a JSON document and add markup to it so it can be styled in a browser.
 
+## Usage
+
 ``` js
 var jsonMarkup = require('json-markup');
 
@@ -30,3 +32,7 @@ The above example will print the following HTML
 
 Afterwards you can use css to style your output to your liking.
 A stylesheet similar to [JSON view](https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc) is included in [style.css](https://github.com/mafintosh/json-markup/blob/master/style.css)
+
+## License
+
+MIT

@@ -4,5 +4,6 @@
  "repository": "git://github.com/mafintosh/json-markup",
  "description":"a json to html syntax highlighter",
  "keywords": ["json", "html", "syntax", "highlight"],
- "author": "Mathias Buus Madsen <mathiasbuus@gmail.com>"
+ "author": "Mathias Buus Madsen <mathiasbuus@gmail.com>",
+ "license": "MIT"
 }
