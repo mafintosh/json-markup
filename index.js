@@ -27,6 +27,7 @@ function type (doc) {
   if (doc === null) return 'null'
   if (Array.isArray(doc)) return 'array'
   if (typeof doc === 'string' && /^https?:/.test(doc)) return 'link'
+  if (typeof doc === 'object' && typeof doc.toISOString === 'function') return 'date'
 
   return typeof doc
 }
@@ -62,6 +63,9 @@ module.exports = function (doc, styleFile) {
 
       case 'number':
         return '<span ' + style('json-markup-number') + '>' + obj + '</span>'
+
+      case 'date':
+        return '<span class="json-markup-string">"' + escape(obj.toISOString()) + '"</span>'
 
       case 'null':
         return '<span ' + style('json-markup-null') + '>null</span>'
