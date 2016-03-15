@@ -40,7 +40,7 @@ module.exports = function(doc) {
 			return '<span class="json-markup-number">'+obj+'</span>';
 
 			case 'null':
-			return '<span class="json-markup-null">null</span>\n';
+			return '<span class="json-markup-null">null</span>';
 
 			case 'string':
 			return '<span class="json-markup-string">"'+escape(obj.replace(/\n/g, '\n'+indent))+'"</span>';
