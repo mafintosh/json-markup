@@ -1,68 +1,92 @@
-var INDENT = '    ';
+'use strict'
 
-var type = function(doc) {
-	if (doc === null) return 'null';
-	if (Array.isArray(doc)) return 'array';
-	if (typeof doc === 'string' && /^https?:/.test(doc)) return 'link';
+var INDENT = '    '
 
-	return typeof doc;
-};
+function inlineRule (objRule) {
+  var str = ''
+  Object.keys(objRule).forEach(function (rule) {
+    str += rule + ':' + objRule[rule] + ';'
+  })
+  return str
+}
 
-var escape = function(str) {
-	return str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
-};
+function Stylize (styleFile) {
+  function styleClass (cssClass) {
+    return 'class="' + cssClass + '"'
+  }
 
-module.exports = function(doc) {
-	var indent = '';
+  function styleInline (cssClass) {
+    return 'style="' + inlineRule(styleFile['.' + cssClass]) + '"'
+  }
 
-	var forEach = function(list, start, end, fn) {
-		if (!list.length) return start+' '+end;
+  if (!styleFile) return styleClass
+  return styleInline
+}
 
-		var out = start+'\n';
+function type (doc) {
+  if (doc === null) return 'null'
+  if (Array.isArray(doc)) return 'array'
+  if (typeof doc === 'string' && /^https?:/.test(doc)) return 'link'
 
-		indent += INDENT;
-		list.forEach(function(key, i) {
-			out += indent+fn(key)+(i < list.length-1 ? ',' : '')+'\n';
-		});
-		indent = indent.slice(0, -INDENT.length);
+  return typeof doc
+}
 
-		return out + indent+end;
-	};
+function escape (str) {
+  return str.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
 
-	var visit = function(obj) {
-		if (obj === undefined) return '';
+module.exports = function (doc, styleFile) {
+  var indent = ''
+  var style = Stylize(styleFile)
 
-		switch (type(obj)) {
-			case 'boolean':
-			return '<span class="json-markup-bool">'+obj+'</span>';
+  var forEach = function (list, start, end, fn) {
+    if (!list.length) return start + ' ' + end
 
-			case 'number':
-			return '<span class="json-markup-number">'+obj+'</span>';
+    var out = start + '\n'
 
-			case 'null':
-			return '<span class="json-markup-null">null</span>';
+    indent += INDENT
+    list.forEach(function (key, i) {
+      out += indent + fn(key) + (i < list.length - 1 ? ',' : '') + '\n'
+    })
+    indent = indent.slice(0, -INDENT.length)
 
-			case 'string':
-			return '<span class="json-markup-string">"'+escape(obj.replace(/\n/g, '\n'+indent))+'"</span>';
+    return out + indent + end
+  }
 
-			case 'link':
-			return '<span class="json-markup-string">"<a href="'+escape(obj)+'">'+escape(obj)+'</a>"</span>';
+  function visit (obj) {
+    if (obj === undefined) return ''
 
-			case 'array':
-			return forEach(obj, '[', ']', visit);
+    switch (type(obj)) {
+      case 'boolean':
+        return '<span ' + style('json-markup-bool') + '>' + obj + '</span>'
 
-			case 'object':
-			var keys = Object.keys(obj).filter(function(key) {
-				return obj[key] !== undefined;
-			});
+      case 'number':
+        return '<span ' + style('json-markup-number') + '>' + obj + '</span>'
 
-			return forEach(keys, '{', '}', function(key) {
-				return '<span class="json-markup-key">'+key + ':</span> '+visit(obj[key]);
-			});
-		}
+      case 'null':
+        return '<span ' + style('json-markup-null') + '>null</span>'
 
-		return '';
-	};
+      case 'string':
+        return '<span ' + style('json-markup-string') + '>"' + escape(obj.replace(/\n/g, '\n' + indent)) + '"</span>'
 
-	return '<div class="json-markup">'+visit(doc)+'</div>';
-};
+      case 'link':
+        return '<span ' + style('json-markup-string') + '>"<a href="' + escape(obj) + '">' + escape(obj) + '</a>"</span>'
+
+      case 'array':
+        return forEach(obj, '[', ']', visit)
+
+      case 'object':
+        var keys = Object.keys(obj).filter(function (key) {
+          return obj[key] !== undefined
+        })
+
+        return forEach(keys, '{', '}', function (key) {
+          return '<span ' + style('json-markup-key') + '>' + key + ':</span> ' + visit(obj[key])
+        })
+    }
+
+    return ''
+  }
+
+  return '<div ' + style('json-markup') + '>' + visit(doc) + '</div>'
+}
