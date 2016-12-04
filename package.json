@@ -1,14 +1,24 @@
 {
   "name": "json-markup",
-  "version": "1.0.0",
-  "repository": "git://github.com/mafintosh/json-markup",
   "description": "a json to html syntax highlighter",
+  "homepage": "https://github.com/mafintosh/json-markup#readme",
+  "version": "1.1.0",
+  "author": {
+    "email": "mathiasbuus@gmail.com",
+    "name": "Mathias Buus Madsen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/json-markup.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mafintosh/json-markup/issues"
+  },
   "keywords": [
     "json",
     "html",
     "syntax",
     "highlight"
   ],
-  "author": "Mathias Buus Madsen <mathiasbuus@gmail.com>",
   "license": "MIT"
 }
