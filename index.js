@@ -85,7 +85,7 @@ module.exports = function (doc, styleFile) {
         })
 
         return forEach(keys, '{', '}', function (key) {
-          return '<span ' + style('json-markup-key') + '>' + key + ':</span> ' + visit(obj[key])
+          return '<span ' + style('json-markup-key') + '>"' + key + '":</span> ' + visit(obj[key])
         })
     }
 
