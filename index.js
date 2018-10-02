@@ -4,7 +4,7 @@ var INDENT = '    '
 
 function inlineRule (objRule) {
   var str = ''
-  Object.keys(objRule).forEach(function (rule) {
+  objRule && Object.keys(objRule).forEach(function (rule) {
     str += rule + ':' + objRule[rule] + ';'
   })
   return str
