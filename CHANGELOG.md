@@ -1,3 +1,13 @@
+<a name="1.1.1"></a>
+## 1.1.1 (2018-10-10)
+
+* Avoid to pass undefined or null object to Object.keys() ([a4a55d3](https://github.com/mafintosh/json-markup/commit/a4a55d3))
+* Quote object key values to produce valid json. ([5168226](https://github.com/mafintosh/json-markup/commit/5168226))
+* Symbols, such as '[]{}', must not be included between html tags. ([9a91db1](https://github.com/mafintosh/json-markup/commit/9a91db1))
+* Update meta ([87919d3](https://github.com/mafintosh/json-markup/commit/87919d3))
+
+
+
 <a name="1.1.0"></a>
 # 1.1.0 (2016-12-04)
 
