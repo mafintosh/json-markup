@@ -77,14 +77,14 @@ module.exports = function (doc, styleFile) {
         return '<span ' + style('json-markup-string') + '>"<a href="' + escape(obj) + '">' + escape(obj) + '</a>"</span>'
 
       case 'array':
-        return forEach(obj, '', '', visit)
+        return forEach(obj, '[', ']', visit)
 
       case 'object':
         var keys = Object.keys(obj).filter(function (key) {
           return obj[key] !== undefined
         })
 
-        return forEach(keys, '', '', function (key) {
+        return forEach(keys, '{', '}', function (key) {
           return '<span ' + style('json-markup-key') + '>"' + key + '":</span> ' + visit(obj[key])
         })
     }
