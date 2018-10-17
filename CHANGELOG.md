@@ -1,3 +1,10 @@
+<a name="1.1.2"></a>
+## 1.1.2 (2018-10-17)
+
+* Revert PR #11 ([2a64597](https://github.com/mafintosh/json-markup/commit/2a64597))
+
+
+
 <a name="1.1.1"></a>
 ## 1.1.1 (2018-10-10)
 
