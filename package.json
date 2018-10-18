@@ -22,7 +22,8 @@
     "syntax"
   ],
   "files": [
-    "index.js"
+    "index.js",
+    "style.css"
   ],
   "license": "MIT"
 }
