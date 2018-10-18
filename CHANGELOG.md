@@ -1,3 +1,10 @@
+<a name="1.1.3"></a>
+## 1.1.3 (2018-10-18)
+
+* Include style in the budle ([ba3103d](https://github.com/mafintosh/json-markup/commit/ba3103d)), closes [#13](https://github.com/mafintosh/json-markup/issues/13)
+
+
+
 <a name="1.1.2"></a>
 ## 1.1.2 (2018-10-17)
 
