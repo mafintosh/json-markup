@@ -2,7 +2,7 @@
   "name": "json-markup",
   "description": "a json to html syntax highlighter",
   "homepage": "https://github.com/mafintosh/json-markup#readme",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "main": "index.js",
   "author": {
     "email": "mathiasbuus@gmail.com",
