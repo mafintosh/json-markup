@@ -1,6 +1,6 @@
 {
   "name": "json-markup",
-  "description": "a json to html syntax highlighter",
+  "description": "Turn JSON into HTML with syntax highlighting for pretty, readable dumps in the browser.",
   "homepage": "https://github.com/mafintosh/json-markup#readme",
   "version": "1.1.4",
   "main": "index.js",
@@ -16,10 +16,16 @@
     "url": "https://github.com/mafintosh/json-markup/issues"
   },
   "keywords": [
+    "format",
     "highlight",
+    "highlighter",
     "html",
     "json",
-    "syntax"
+    "markup",
+    "pretty",
+    "render",
+    "syntax",
+    "viewer"
   ],
   "files": [
     "index.js",
